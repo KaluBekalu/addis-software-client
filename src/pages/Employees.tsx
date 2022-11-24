@@ -13,6 +13,8 @@ import {
   EditNewEmployee,
   IEmployeeEditType,
 } from "../components/EditNewEmployee";
+import { IStateType } from "../reducers";
+import { Store } from "redux";
 
 const IconContainer = styled.div`
   display: flex;
@@ -29,7 +31,7 @@ const Icon = styled.span`
 `;
 
 let Employees = ({}) => {
-  const store = useStore();
+  const store: Store = useStore();
   const { employees, loading } = store.getState();
   const dispatch = useDispatch();
   const [modalVisible, setModalVisible] = useState(false);

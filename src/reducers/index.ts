@@ -1,3 +1,4 @@
+import { Reducer } from "redux";
 import {
   ADD_EMPLOYEE,
   ADD_EMPLOYEE_OK,
@@ -24,14 +25,20 @@ export type EmployeeResponse = {
   updatedAt: string;
 };
 
-const initialState = {
+export type IStateType = {
+  employees: [];
+  error: false;
+  loading: false;
+  deleteProduct: null;
+};
+const initialState: any = {
   employees: [],
   error: false,
   loading: false,
   deleteProduct: null,
 };
 
-export default function (state = initialState, action: any) {
+export default function reducer(state = initialState, action: any): Reducer {
   switch (action.type) {
     case BEGIN_EMPLOYEES_DOWNLOAD:
     case ADD_EMPLOYEE:

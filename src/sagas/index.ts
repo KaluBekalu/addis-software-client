@@ -84,12 +84,7 @@ function* updateEmployee(action: any) {
     yield call(updateEmployeeDB, employee);
     yield updateEmployeeOkAction(employee);
     // Alert
-    console.log({
-      title: "Updated!",
-      text: "The employee has been updated.",
-      icon: "success",
-      confirmButtonColor: "#62a086",
-    });
+    console.log("The employee has been updated.");
   } catch (error) {
     yield updateEmployeeErrorAction();
   }
